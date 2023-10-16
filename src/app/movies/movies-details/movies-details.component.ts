@@ -17,17 +17,23 @@ export class MoviesDetailsComponent {
   ) {}
 
   ngOnInit() {
-    this.moviesDataService
-      .getDetails(this.activatedRoute.snapshot.params['id'])
-      .subscribe((data: any) => {
-        this.movieDetails = data;
+    this.activatedRoute.params.subscribe(params => {
+      const movieId = params['id'];
+      this.fetchMovieDetails(movieId);
+    });
+  }
 
-        this.moviesDataService
-          .getRecommended(this.movieDetails.id)
-          .subscribe((recommendedData: any) => {
-            this.recommendedMovies = recommendedData.results;
-          });
-      });
+  private fetchMovieDetails(movieId: number) {
+    this.moviesDataService.getDetails(movieId).subscribe((data: any) => {
+      this.movieDetails = data;
+      this.fetchRecommendedMovies(this.movieDetails.id);
+    });
+  }
+
+  private fetchRecommendedMovies(movieId: number) {
+    this.moviesDataService.getRecommended(movieId).subscribe((recommendedData: any) => {
+      this.recommendedMovies = recommendedData.results;
+    });
   }
 
   getLanguages(): string {
