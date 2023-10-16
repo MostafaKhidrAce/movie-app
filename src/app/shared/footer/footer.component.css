@@ -1,0 +1,10 @@
+footer {
+  background-color: #032541;
+}
+.nav-link h2 {
+  color: #fff;
+  font-family: "Permanent Marker", cursive;
+}
+.nav-link h2 span {
+  color: red;
+}
