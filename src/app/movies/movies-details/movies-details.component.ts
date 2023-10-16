@@ -9,6 +9,7 @@ import { MoviesDataService } from 'src/app/services/movies-data.service';
 })
 export class MoviesDetailsComponent {
   movieDetails: any;
+  recommendedMovies:any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -20,6 +21,12 @@ export class MoviesDetailsComponent {
       .getDetails(this.activatedRoute.snapshot.params['id'])
       .subscribe((data: any) => {
         this.movieDetails = data;
+
+        this.moviesDataService
+          .getRecommended(this.movieDetails.id)
+          .subscribe((recommendedData: any) => {
+            this.recommendedMovies = recommendedData.results;
+          });
       });
   }
 
