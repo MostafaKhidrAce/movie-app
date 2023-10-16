@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
+
+.navbar {
+  background-color: #032541 !important;
+}
+
+.nav-link h2 {
+  color: #fff;
+  font-family: "Permanent Marker", cursive;
+}
+.nav-link h2 span {
+  color: red;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.nav-item i {
+  color: #fff;
+}
+
+.nav-item.wish {
+  position: relative;
+}
+
+.nav-item.wish span {
+  position: absolute;
+  background-color: red;
+  color: #fff;
+  height: 24px;
+  width: 23px;
+  top: -8px;
+  right: -67%;
+  text-align: center;
+  border-radius: 50%;
+  display: none;
+}

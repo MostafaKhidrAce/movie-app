@@ -1,1 +1,38 @@
-<p>nav-bar works!</p>
+<nav class="navbar navbar-expand-lg navbar-dark p-3">
+  <div class="container-fluid">
+    <a class="nav-link mx-2" routerLink="">
+      <h2>MOVIES <span>+</span>+</h2>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link mx-2"
+            aria-current="page"
+            routerLink=""
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item wish">
+          <a routerLink="wish-list" routerLinkActive="active"
+            ><i class="fa-solid fa-heart fa-xl"></i><span>1</span></a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
