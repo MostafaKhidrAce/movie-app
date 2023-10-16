@@ -1,34 +1,40 @@
 <div class="container">
   <div class="row">
-    <div class="col-4 movie_img">
+    <div class="col-4 movie_img" *ngIf="movieDetails">
       <img
         class="main__img"
         [src]="'https://image.tmdb.org/t/p/w500' + movieDetails.poster_path"
-        [alt]="movieDetails.title"
+        alt="Movie Poster"
       />
     </div>
     <div class="col-8 movie_content">
       <h2>{{ movieDetails.title }}</h2>
-      <p class="movie_date">Sep 25, 2017</p>
-      <div class="">Rating</div>
+      <p class="movie_date">{{ movieDetails.release_date }}</p>
+      <div class=""><span [innerHTML]="getRatingStars()"></span></div>
       <div class="movie_content_desc">
-        Natasha Romanoff, also known as Black Widow, confronts the darker parts
-        of her ledger when a dangerous conspiracy with ties to her past arises.
-        Pursued by a force that will stop at nothing to bring her down, Natasha
-        must deal with her history as a spy and the broken relationships left in
-        her wake long before she became an Avenger.
+        <p>{{ movieDetails.overview }}</p>
       </div>
       <div class="movie_badges">
-        <p class="movie_badge">Action</p>
-        <p class="movie_badge">Crime</p>
-        <p class="movie_badge">Thriller</p>
+        <p class="movie_badge" *ngFor="let genre of movieDetails.genres">
+          {{ genre.name }}
+        </p>
       </div>
       <div class="movie_dura_lang d-flex gap-5">
-        <p>Duration: <span>134 Min</span></p>
-        <p>Languages: <span>English</span></p>
+        <p>
+          Duration: <span>{{ movieDetails.runtime }} Min</span>
+        </p>
+        <p>
+          Languages: <span>{{ getLanguages() }}</span>
+        </p>
       </div>
       <div class="studio-img">
-        <img src="../../../assets/hUzeosd33nzE5MCNsZxCGEKTXaQ 1.png" alt="" />
+        <ng-container *ngFor="let company of movieDetails.production_companies">
+          <img
+            *ngIf="company.logo_path"
+            [src]="'https://image.tmdb.org/t/p/w500' + company.logo_path"
+            alt="Company Logo"
+          />
+        </ng-container>
       </div>
       <div class="fav_btn_container">
         <button><i class="fa-solid fa-heart fa-xl"></i></button>
