@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
 export class CardComponent {
   constructor(private _router: Router){}
     @Input()movie:any;
-  redirectToDetails(id:number){
-   console.log(id);
-  this._router.navigate(['movie-details',id]);
-  }
+    redirectToDetails(id:number){
+      console.log(id);
+     this._router.navigate(['movie-details',id]);
+     }
 }
