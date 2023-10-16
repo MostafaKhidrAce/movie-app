@@ -14,11 +14,14 @@ constructor(private _MoviesDataService:MoviesDataService){
   this.pages=new Array(10).fill("").map((ele,index)=>index+1)
 }
 ngOnInit(): void {
-this._MoviesDataService.getPopular().subscribe({
-next:(data:any)=>{console.log(data.results)
-  this.moviesList=data.results;
+  this.getMovies(1);
 }
+getMovies(page:number){
+  this._MoviesDataService.getPopular(page).subscribe({
+    next:(data:any)=>{console.log(data.results)
+      this.moviesList=data.results;
+    }
 
-})
+    })
 }
 }
