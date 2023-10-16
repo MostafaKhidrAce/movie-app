@@ -9,6 +9,10 @@
   width: 100%;
 }
 
+.movie_img img {
+  border-radius: 20px;
+}
+
 /* Movie content */
 .movie_content {
   padding: 1rem 0 1rem 2rem;
@@ -50,6 +54,12 @@
 /* Studio image */
 .studio-img {
   margin: 9px 0;
+}
+
+.studio-img img {
+  max-width: 100px;
+  max-width: 100px;
+  margin-right: 30px;
 }
 
 /* Buttons */
