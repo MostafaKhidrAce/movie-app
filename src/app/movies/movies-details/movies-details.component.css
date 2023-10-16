@@ -1,0 +1,119 @@
+/* Margins and spacing */
+.container {
+  margin-bottom: 3rem;
+  margin-top: 3rem;
+}
+
+/* Image */
+.main__img {
+  width: 100%;
+}
+
+/* Movie content */
+.movie_content {
+  padding: 1rem 0 1rem 2rem;
+}
+
+.movie_content h2 {
+  font-size: 3rem;
+}
+
+/* Movie description */
+.movie_content_desc {
+  margin: 1rem 0;
+  font-size: 20px;
+}
+
+/* Movie badges */
+.movie_badges {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.movie_badge {
+  background-color: rgba(255, 227, 83, 1);
+  border-radius: 25px;
+  padding: 9px 31px;
+  width: max-content;
+}
+
+/* Movie duration and language */
+.movie_dura_lang {
+  font-weight: bold;
+}
+
+.movie_dura_lang span {
+  font-weight: 400;
+}
+
+/* Studio image */
+.studio-img {
+  margin: 9px 0;
+}
+
+/* Buttons */
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #032541;
+  background-color: #fff;
+  margin-left: auto;
+  display: block;
+}
+
+/* Favorite button container */
+.fav_btn_container {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.movie_date {
+  font-size: 12px;
+  color: rgba(133, 133, 133, 1);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .row {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .movie_img,
+  .movie_content {
+    width: 80%;
+    margin-bottom: 30px;
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .movie_img,
+  .movie_content {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 376px) {
+  button {
+    margin-right: 20px;
+  }
+}
+
+/* _____________________________ */
+
+.sec_separator {
+  height: 2px;
+  background-color: #0325418a;
+}
+
+/* _______________________________ */
+
+.recommendations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
