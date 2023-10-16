@@ -1,4 +1,6 @@
+import { MoviesDataService } from './../../services/movies-data.service';
 import { Component } from '@angular/core';
+import { Movieface } from 'src/app/interface/movieface';
 
 @Component({
   selector: 'app-movies',
@@ -6,5 +8,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent {
+  pages: Array<number> = [];
+  moviesList!:Array<Movieface>;
+constructor(private _MoviesDataService:MoviesDataService){
+  this.pages=new Array(10).fill("").map((ele,index)=>index+1)
+}
+ngOnInit(): void {
+this._MoviesDataService.getPopular().subscribe({
+next:(data:any)=>{console.log(data.results)
+  this.moviesList=data.results;
+}
 
+})
+}
 }
