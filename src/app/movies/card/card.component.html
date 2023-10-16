@@ -1,11 +1,11 @@
 <a  (click)="redirectToDetails(movie.id)">
   <div class="card border-0 ">
     <div class="shadow-lg">
-      <img class="w-100  rounded-3 mb-2" [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path" class="card-img-top" alt="...">
+      <img class="w-100  rounded-3 " [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path" class="card-img-top" alt="...">
 
     </div>
-        <div class="card-body p-0">
-          <h6 class="card-title ">{{movie.title}}</h6>
+        <div class="card-body py-2 px-0">
+          <h6 class="card-title ">{{movie.title.split(" ").slice(0, 3).join(" ")}}</h6>
           <div class=" text-body-secondary">
             2 days ago
           </div>
