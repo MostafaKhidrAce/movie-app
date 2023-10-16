@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -6,6 +7,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  @Input()movie:any;
-
+  constructor(private _router: Router){}
+    @Input()movie:any;
+  redirectToDetails(id:number){
+   console.log(id);
+  this._router.navigate(['movie-details',id]);
+  }
 }

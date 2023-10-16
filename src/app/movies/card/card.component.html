@@ -1,20 +1,22 @@
-<div class="card border-0 ">
-  <div class="shadow-lg">
-    <img class="w-100  rounded-3 mb-2" [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path" class="card-img-top" alt="...">
+<a  (click)="redirectToDetails(movie.id)">
+  <div class="card border-0 ">
+    <div class="shadow-lg">
+      <img class="w-100  rounded-3 mb-2" [src]="'https://image.tmdb.org/t/p/w500'+movie.poster_path" class="card-img-top" alt="...">
 
-  </div>
-      <div class="card-body p-0">
-        <h6 class="card-title ">{{movie.title}}</h6>
-        <div class=" text-body-secondary">
-          2 days ago
-        </div>
-        <div class="outer_ring">
-          <div class="user_score_chart 5c3d283fc3a36824ea3bc815" data-percent="77.23" data-track-color="#204529" data-bar-color="#21d07a">
-            <div class="percent">
-                <span class="icon icon-r77"></span>
-                <canvas height="68" width="68" style="height: 34px; width: 34px;">77%</canvas>
+    </div>
+        <div class="card-body p-0">
+          <h6 class="card-title ">{{movie.title}}</h6>
+          <div class=" text-body-secondary">
+            2 days ago
+          </div>
+          <div class="outer_ring">
+            <div class="user_score_chart 5c3d283fc3a36824ea3bc815" data-percent="77.23" data-track-color="#204529" data-bar-color="#21d07a">
+              <div class="percent">
+                  <span class="icon icon-r77"></span>
+                  <canvas height="68" width="68" style="height: 34px; width: 34px;">77%</canvas>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+</a>
