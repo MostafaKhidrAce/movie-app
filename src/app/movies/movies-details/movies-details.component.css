@@ -84,6 +84,18 @@ button {
   color: rgba(133, 133, 133, 1);
 }
 
+.recommendations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.rec {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .row {
@@ -121,9 +133,3 @@ button {
 }
 
 /* _______________________________ */
-
-.recommendations {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
