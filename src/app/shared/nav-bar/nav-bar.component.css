@@ -14,9 +14,7 @@
   font-family: "Permanent Marker", cursive;
 }
 .nav-link h2 span {
-  color: #FFE353;
-
-
+  color: rgb(133, 71, 0);
 }
 
 .navbar-nav {
@@ -46,4 +44,9 @@
 
 .active- {
   font-weight: bold;
+}
+
+button i {
+  color: #032541;
+  font-size: 2rem;
 }

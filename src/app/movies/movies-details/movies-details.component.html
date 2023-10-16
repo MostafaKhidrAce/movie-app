@@ -49,8 +49,14 @@
 >
   <h2 class="rec">Recommendations</h2>
   <div class="row g-4">
-    <div class="col-md-2" *ngFor="let recommendedMovie of recommendedMovies">
-      <app-card [movie]="recommendedMovie"></app-card>
-    </div>
+    <ng-container *ngFor="let recommendedMovie of recommendedMovies">
+      <ng-container
+        *ngIf="recommendedMovie.poster_path && recommendedMovie.title"
+      >
+        <div class="col-md-2">
+          <app-card [movie]="recommendedMovie"></app-card>
+        </div>
+      </ng-container>
+    </ng-container>
   </div>
 </div>
