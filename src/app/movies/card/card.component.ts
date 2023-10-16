@@ -7,10 +7,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./card.component.css']
 })
 export class CardComponent {
-  constructor(private _router: Router){}
-    @Input()movie:any;
-    redirectToDetails(id:number){
-      console.log(id);
-     this._router.navigate(['movie-details',id]);
-     }
+  constructor(private _router: Router) { }
+  @Input() movie: any;
+  redirectToDetails(id: number) {
+    console.log(id);
+    this._router.navigate(['movie-details', id]);
+  }
+
 }
