@@ -17,7 +17,7 @@ export class CardComponent {
     this._MoviesWishlist.getCounter().subscribe((res) => {
       this.counter = res
     })
-  }
+}
 
   @Input() movie: any;
   redirectToDetails(id: number) {
