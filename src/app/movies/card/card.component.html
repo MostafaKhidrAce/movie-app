@@ -13,23 +13,22 @@
     </h6>
     <div class="text-body-secondary d-flex justify-content-between card_body_data">
       {{ movie.release_date | date }}
-
-
-      <i  *ngIf="!addedItem" class="fa-solid fa-heart "  [ngStyle]="movie.watchList ? {'color': 'red'} : {'color': 'blue'}" (click)="handleAddtoWatchList(movie.id)"></i>
-      <i  *ngIf="addedItem" class="fa-solid  " (click)="handleRemove(movie.id)"></i>
-
-
-
+      <i *ngIf="!addedItem" class="fa-solid fa-heart "
+        [ngStyle]="movie.watchList ? {'color': 'red'} : {'color': 'blue'}" (click)="handleAddtoWatchList(movie.id)"></i>
+      <i *ngIf="addedItem" class="fa-solid  " (click)="handleRemove(movie.id)"></i>
     </div>
-
-    <div class="progress rounded-circle text-white " [ngClass]="{'bg_green':movie.vote_average*10>=75}">
-      <div class="circle rounded-circle  d-flex justify-content-center align-items-center">
-        <p class="text-white  text-center m-auto position-relative vote__text">{{(movie.vote_average/10)*100}}<i
-            class="fas fa-percent position-absolute pt-1 fw-bold"></i></p>
-
+    <div class="col-md-6">
+      <div class="progress blue ">
+        <span class="progress-left ">
+          <span class="progress-bar" [ngClass]="{'bg_green':movie.vote_average*10>=75}"></span>
+        </span>
+        <span class="progress-right ">
+          <span class="progress-bar " [ngClass]="{'bg_green':movie.vote_average*10>=75}"></span>
+        </span>
+        <div class="progress-value  overflow-hidden position-relative">{{(movie.vote_average/10)*100|number:'1.0-0'}}<i
+            class="fas fa-percent  fw-bold"></i></div>
       </div>
 
-    </div>
 
+    </div>
   </div>
-</div>
