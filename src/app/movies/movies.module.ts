@@ -2,7 +2,7 @@ import { SearchPipe } from './../search.pipe';
 // Module
 
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { MoviesRoutingModule } from './movies-routing.module';
 // component
@@ -10,6 +10,7 @@ import { MoviesComponent } from './movies/movies.component';
 import { CardComponent } from './card/card.component';
 import { MoviesDetailsComponent } from './movies-details/movies-details.component';
 import { MoviesWishlistComponent } from './movies-wishlist/movies-wishlist.component';
+import { NgModule } from '@angular/core';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MoviesWishlistComponent } from './movies-wishlist/movies-wishlist.compo
   ],
   imports: [
     CommonModule,
-    MoviesRoutingModule,FormsModule
+    MoviesRoutingModule,FormsModule,
+    
   ],
   exports:[
     MoviesComponent,
