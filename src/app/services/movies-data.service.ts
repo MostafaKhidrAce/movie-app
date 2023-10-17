@@ -19,4 +19,7 @@ export class MoviesDataService {
     return this._httpClient.get(`
     https://api.themoviedb.org/3/movie/${movie_id}/recommendations?api_key=c3e181b664d96dbfc2a8921182cc0c6a`);
   }
+  getSearchMovie(MovieName:string):Observable<any> {
+    return this._httpClient.get(`https://api.themoviedb.org/3/search/movie?api_key=c3e181b664d96dbfc2a8921182cc0c6a&query=${MovieName}`);
+  }
 }
