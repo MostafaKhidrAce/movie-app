@@ -8,8 +8,8 @@
   height          : 41px;
   background-color: #FFE353;
   position        : absolute;
-  top : -45%;
-  left: 5%;
+  top             : -45%;
+  left            : 5%;
 }
 
 
@@ -29,6 +29,7 @@
   font-size: 6px;
 
 }
-.bg_green{
+
+.bg_green {
   background-color: rgb(93, 198, 93);
 }

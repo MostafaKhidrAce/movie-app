@@ -8,7 +8,8 @@ import { Movieface } from 'src/app/interface/movieface';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent {
-  pages: Array<number> = [];
+  term:string="";
+   pages: Array<number> = [];
   moviesList!:Array<Movieface>;
 constructor(private _MoviesDataService:MoviesDataService){
   this.pages=new Array(10).fill("").map((ele,index)=>index+1)

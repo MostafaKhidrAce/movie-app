@@ -8,7 +8,7 @@ export interface Movieface {
   overview: string;
   popularity: number;
   poster_path: string;
-  release_date: string;
+  release_date: string|Date;
   title: string;
   video: boolean;
   vote_average: number;
