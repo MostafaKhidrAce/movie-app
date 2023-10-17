@@ -19,11 +19,11 @@ export class MoviesWishlistService {
     localStorage.setItem("moviesList", JSON.stringify(this.sendToWatchList))
 
   }
-  removeItem(item:any){
-    const index=  this.sendToWatchList.indexOf(item);
-    this.sendToWatchList.splice(index,1)
+  removeItem(item: any) {
+    const index = this.sendToWatchList.indexOf(item);
+    this.sendToWatchList.splice(index, 1)
     localStorage.setItem("moviesList", JSON.stringify(this.sendToWatchList))
-    
+
   }
 
   displayMoviesList() {
@@ -32,13 +32,16 @@ export class MoviesWishlistService {
   setCounter(counter: number) {
     this.counter.next(counter)
     localStorage.setItem("moviesListCounter", JSON.stringify(this.sendToWatchList.length))
-    
+
 
   }
   getCounter(): Observable<any> {
-    this.sendToWatchList= JSON.parse(localStorage.getItem('moviesList') || '{}')
-     this.counter.next(this.sendToWatchList.length)
-     return this.counter
+    if(localStorage.getItem('moviesList')!=null){
+      this.sendToWatchList = JSON.parse(localStorage.getItem('moviesList') || '{}')
+      this.counter.next(this.sendToWatchList.length)
+      return this.counter
+    }
+    return this.counter
 
 
   }
