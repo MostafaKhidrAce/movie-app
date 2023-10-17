@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MoviesDataService } from 'src/app/services/movies-data.service';
+import { MoviesWishlistService } from 'src/app/services/movies-wishlist.service';
 
 @Component({
   selector: 'app-movies-details',
@@ -9,12 +10,24 @@ import { MoviesDataService } from 'src/app/services/movies-data.service';
 })
 export class MoviesDetailsComponent {
   movieDetails: any;
-  recommendedMovies:any;
+  recommendedMovies: any;
+  moviesList: any
+  addedItem = false
+  counter = 0
+
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private moviesDataService: MoviesDataService
-  ) {}
+    private moviesDataService: MoviesDataService,
+    private _MoviesWishlist: MoviesWishlistService
+  ) {
+    this.moviesList = _MoviesWishlist.displayMoviesList();
+    this._MoviesWishlist.getCounter().subscribe((res) => {
+      this.counter = res
+
+    })
+  }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(params => {
@@ -64,6 +77,24 @@ export class MoviesDetailsComponent {
     return starsHtml;
   }
 
+  handleAddtoWatchList() {
+    if (this.moviesList.includes(this.movieDetails)) { }
+    else {
+      this._MoviesWishlist.getMoviesList(this.movieDetails)
+      this.addedItem = true
+      localStorage.setItem("flagIcon", JSON.stringify(this.addedItem))
+      this._MoviesWishlist.setCounter(++this.counter)
+
+    }
+
+  }
+  handleRemove() {
+    this._MoviesWishlist.removeItem(this.movieDetails)
+    this._MoviesWishlist.setCounter(--this.counter)
+    this.addedItem = false
+    localStorage.setItem("flagIcon", JSON.stringify(this.addedItem))
+
+  }
 
 
 }

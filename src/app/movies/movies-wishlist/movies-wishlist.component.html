@@ -1,9 +1,10 @@
- <div class="container py-5 " id="movesList">
+<div class="container py-5 my-5 " *ngIf="moviesList.length>0">
     <div class="row g-5">
         <div class="col-md-6" *ngFor="let movie of moviesList">
             <div class="d-flex">
                 <div class="movie__img">
-                    <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="" srcset="" class="img-fluid">
+                    <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="" srcset=""
+                        class="img-fluid">
 
 
                 </div>
@@ -33,15 +34,15 @@
 
     </div>
 </div>
-<div class="container py-5 my-5  " id="noMovies">
+<div class="container py-5 my-5  " *ngIf="moviesList.length==0">
     <div class="row ">
-    
-<div class="col-md-12  text-center   ">
-<figure>
-    <img src="../../../assets/🦆 icon _heart slash_.png" alt="">
-</figure>
-<p>No Movies in watch list </p>
-<button routerLink="" class="btn btn-watch"> Back to home</button>
-</div>
+
+        <div class="col-md-12  text-center   ">
+            <figure>
+                <img src="../../../assets/watchlist_img.png" alt="">
+            </figure>
+            <p>No Movies in watch list </p>
+            <button routerLink="" class="btn btn-watch"> Back to home</button>
+        </div>
     </div>
 </div>

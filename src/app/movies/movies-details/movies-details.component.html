@@ -1,11 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-4 movie_img" *ngIf="movieDetails">
-      <img
-        class="main__img"
-        [src]="'https://image.tmdb.org/t/p/w500' + movieDetails.poster_path"
-        alt="Movie Poster"
-      />
+      <img class="main__img" [src]="'https://image.tmdb.org/t/p/w500' + movieDetails.poster_path" alt="Movie Poster" />
     </div>
     <div class="col-8 movie_content">
       <h2>{{ movieDetails.title }}</h2>
@@ -29,30 +25,22 @@
       </div>
       <div class="studio-img">
         <ng-container *ngFor="let company of movieDetails.production_companies">
-          <img
-            *ngIf="company.logo_path"
-            [src]="'https://image.tmdb.org/t/p/w500' + company.logo_path"
-            alt="Company Logo"
-          />
+          <img *ngIf="company.logo_path" [src]="'https://image.tmdb.org/t/p/w500' + company.logo_path"
+            alt="Company Logo" />
         </ng-container>
       </div>
       <div class="fav_btn_container">
-        <button><i class="fa-solid fa-heart fa-xl"></i></button>
+        <button><i class="fa-solid fa-heart fa-xl" (click)="handleAddtoWatchList()"></i></button>
       </div>
     </div>
   </div>
 </div>
 <div class="container sec_separator"></div>
-<div
-  class="container recommendations"
-  *ngIf="recommendedMovies && recommendedMovies.length > 0"
->
+<div class="container recommendations" *ngIf="recommendedMovies && recommendedMovies.length > 0">
   <h2 class="rec">Recommendations</h2>
   <div class="row g-4">
     <ng-container *ngFor="let recommendedMovie of recommendedMovies">
-      <ng-container
-        *ngIf="recommendedMovie.poster_path && recommendedMovie.title"
-      >
+      <ng-container *ngIf="recommendedMovie.poster_path && recommendedMovie.title">
         <div class="col-md-2">
           <app-card [movie]="recommendedMovie"></app-card>
         </div>
