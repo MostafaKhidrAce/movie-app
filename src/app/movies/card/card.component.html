@@ -13,9 +13,11 @@
     </h6>
     <div class="text-body-secondary d-flex justify-content-between card_body_data">
       {{ movie.release_date | date }}
-      <button class="border-0 bg-transparent" (click)="toggleIcon()"> <a>
-          <i class="fa-solid fa-heart heartIcon" [id]="movie.id"></i>
-        </a></button>
+
+      <i *ngIf="!addedItem" class="fa-solid fa-heart heartIcon" (click)="handleAddtoWatchList()"></i>
+      <i *ngIf="addedItem" class="fa-solid fa-heart clickedHeartIcon" (click)="handleRemove()"></i>
+
+
     </div>
 
     <div class="progress rounded-circle text-white " [ngClass]="{'bg_green':movie.vote_average*10>=75}">

@@ -8,14 +8,15 @@ import { MoviesWishlistService } from 'src/app/services/movies-wishlist.service'
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
-  counter = new BehaviorSubject<number>(0).value
+  counter = 0
   moviesList: any
 
   constructor(private _MoviesWishlist: MoviesWishlistService) {
-    _MoviesWishlist.getCounter().subscribe(res => {
+    this._MoviesWishlist.getCounter().subscribe((res) => {
       this.counter = res
-
     })
+
+
     if (localStorage.getItem("moviesListCounter") != null) {
       this.counter = Number(localStorage.getItem("moviesListCounter"))
     }
