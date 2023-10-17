@@ -17,7 +17,7 @@
         <li class="nav-item wish">
           <a routerLink="wish-list" routerLinkActive="active-"><i class="fa-solid fa-heart fa-xl"></i></a>
           <div>
-            <span class="text-dark">{{counter}}</span>
+            <span *ngIf="counter>0" class="text-dark">{{counter}}</span>
           </div>
         </li>
       </ul>

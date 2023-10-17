@@ -13,25 +13,31 @@ import { JsonPipe } from '@angular/common';
 
 export class MoviesWishlistComponent {
   movieID = 0;
-  moviesList: any;
-
-
+  moviesList: any[] = [];
   constructor(private _MoviesDataService: MoviesDataService, private _MoviesWishlist: MoviesWishlistService) {
-    document.getElementById("noMovies")?.classList.add("d-none")
-
-    if (localStorage.getItem("moviesList") != null) {
-      this.moviesList = localStorage.getItem("moviesList")
-
-    }
 
     this.moviesList = _MoviesWishlist.displayMoviesList();
     _MoviesWishlist.setCounter(this.moviesList.length);
 
-
+    this.filterMovieArray(this.moviesList)
 
 
   }
 
+  filterMovieArray(moviesList: any[]) {
+
+    const objectSet = new Set();
+    for (let i = this.moviesList.length - 1; i >= 0; i--) {
+      const obj = this.moviesList[i];
+      const objString = JSON.stringify(obj);
+
+      if (objectSet.has(objString)) {
+        this.moviesList.splice(i, 1);
+      } else {
+        objectSet.add(objString);
+      }
+    }
+  }
 
   getRoundedPopularity(popularity: number): number {
     return Math.floor(popularity);
