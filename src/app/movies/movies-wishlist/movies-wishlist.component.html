@@ -1,116 +1,47 @@
-<div class="container py-5">
+ <div class="container py-5 " id="movesList">
     <div class="row g-5">
-        <div class="col-md-6">
+        <div class="col-md-6" *ngFor="let movie of moviesList">
             <div class="d-flex">
                 <div class="movie__img">
-                    <img src="../../../assets/image.png" alt="" srcset="">
+                    <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="" srcset="" class="img-fluid">
+
+
                 </div>
                 <div class="movie__desc ps-3">
-                   <div class="d-flex justify-content-between">
-                    <h3>Black widow</h3>
-                    <button class="border-0 bg-transparent"><i class="fa-solid  fa-heart fa-xl "></i></button>
-                   </div>
+                    <div class="d-flex justify-content-between">
+                        <h3>{{movie.title}}</h3>
+                        <button class="border-0 bg-transparent"><i class="fa-solid  fa-heart fa-xl "></i></button>
+                    </div>
 
-                <p class="text-muted">Sep 21,2017</p>
+                    <p class="text-muted">{{movie. release_date}}</p>
 
-            <div class="d-flex">
-                <div class="rating-stars">
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
+                    <div class="d-flex">
+                        <div class="rating-stars">
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
 
-                  </div>
-                  <p class="ps-2">9277</p>
-            </div>
-            <p>Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by....</p>
+                        </div>
+                        <p class="ps-2"><span [textContent]="getRoundedPopularity(movie.popularity)"></span></p>
+                    </div>
+                    <p>{{movie.overview}}</p>
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
-            <div class="d-flex">
-                <div class="movie__img">
-                    <img src="../../../assets/image.png" alt="" srcset="">
-                </div>
-                <div class="movie__desc ps-3">
-                   <div class="d-flex justify-content-between">
-                    <h3>Black widow</h3>
-                    <button class="border-0 bg-transparent"><i class="fa-solid  fa-heart fa-xl "></i></button>
-                   </div>
 
-                <p class="text-muted">Sep 21,2017</p>
-
-            <div class="d-flex">
-                <div class="rating-stars">
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-
-                  </div>
-                  <p class="ps-2">9277</p>
-            </div>
-            <p>Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by....</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="d-flex">
-                <div class="movie__img">
-                    <img src="../../../assets/image.png" alt="" srcset="">
-                </div>
-                <div class="movie__desc ps-3">
-                   <div class="d-flex justify-content-between">
-                    <h3>Black widow</h3>
-                    <button class="border-0 bg-transparent"><i class="fa-solid  fa-heart fa-xl "></i></button>
-                   </div>
-
-                <p class="text-muted">Sep 21,2017</p>
-
-            <div class="d-flex">
-                <div class="rating-stars">
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-
-                  </div>
-                  <p class="ps-2">9277</p>
-            </div>
-            <p>Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by....</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="d-flex">
-                <div class="movie__img">
-                    <img src="../../../assets/image.png" alt="" srcset="">
-                </div>
-                <div class="movie__desc ps-3">
-                   <div class="d-flex justify-content-between">
-                    <h3>Black widow</h3>
-                    <button class="border-0 bg-transparent"><i class="fa-solid  fa-heart fa-xl "></i></button>
-                   </div>
-
-                <p class="text-muted">Sep 21,2017</p>
-
-            <div class="d-flex">
-                <div class="rating-stars">
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-
-                  </div>
-                  <p class="ps-2">9277</p>
-            </div>
-            <p>Natasha Romanoff, also known as Black Widow, confronts the darker parts of her ledger when a dangerous conspiracy with ties to her past arises. Pursued by....</p>
-                </div>
-            </div>
-        </div>
+    </div>
+</div>
+<div class="container py-5 my-5  " id="noMovies">
+    <div class="row ">
+    
+<div class="col-md-12  text-center   ">
+<figure>
+    <img src="../../../assets/🦆 icon _heart slash_.png" alt="">
+</figure>
+<p>No Movies in watch list </p>
+<button routerLink="" class="btn btn-watch"> Back to home</button>
+</div>
     </div>
 </div>

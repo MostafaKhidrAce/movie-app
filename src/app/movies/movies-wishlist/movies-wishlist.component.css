@@ -2,3 +2,8 @@ i{
  color: rgba(255, 227, 83, 1);
 
 }
+
+.btn-watch{
+    border-radius: 0.625rem;
+    background: #FFE353;
+}
