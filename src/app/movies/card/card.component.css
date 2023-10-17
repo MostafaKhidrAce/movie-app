@@ -1,6 +1,12 @@
-.card_body_data i {
-  color: #FFE353;
+.heartIcon {
+ 
+    color: #032541;
+  
+}
+.clickedHeartIcon {
+ color: #FFE353;
 
+  
 }
 
 .progress {

@@ -31,7 +31,7 @@
 
 .nav-item.wish span {
   position: absolute;
-  background-color: red;
+  background: #F3F1F1;
   color: #fff;
   height: 24px;
   width: 23px;
@@ -39,7 +39,7 @@
   right: -67%;
   text-align: center;
   border-radius: 50%;
-  display: none;
+
 }
 
 .active- {
