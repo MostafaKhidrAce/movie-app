@@ -31,7 +31,7 @@
 
 .nav-item.wish span {
   position: absolute;
-  background: #F3F1F1;
+  background: #f3f1f1;
   color: #fff;
   height: 24px;
   width: 23px;
@@ -39,7 +39,6 @@
   right: -67%;
   text-align: center;
   border-radius: 50%;
-
 }
 
 .active- {
@@ -49,4 +48,19 @@
 button i {
   color: #032541;
   font-size: 2rem;
+}
+
+.nav-item.wish button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  color: #032541;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.nav-item.wish button.active {
+  font-weight: bold;
+  text-decoration: underline;
 }
