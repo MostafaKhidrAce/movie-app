@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { LanguageService } from '../services/lang-data.service';
+import { LanguageService } from './lang-data.service';
 import { switchMap } from 'rxjs/operators';
 
 @Injectable({

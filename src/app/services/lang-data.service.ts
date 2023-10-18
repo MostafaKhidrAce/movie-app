@@ -1,5 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, InjectionToken } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+
+export const LANGUAGE_SERVICE = new InjectionToken<LanguageService>('LANGUAGE_SERVICE');
 
 @Injectable({
   providedIn: 'root'
