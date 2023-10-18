@@ -9,14 +9,17 @@
         <div class="row">
           <div class="col-md-9 col-lg-10">
             <input
-              [(ngModel)]="term" (change)="search()"
+              [(ngModel)]="term"
+              (change)="search()"
               class="form-control border-0 header__input"
               placeholder="Search and explore...."
               type="text"
             />
           </div>
           <div class="col-md-3 col-lg-2">
-            <button class="btn btn__search px-4" (click)="searchMovie()">Search</button>
+            <button class="btn btn__search px-4" (click)="searchMovie()">
+              Search
+            </button>
           </div>
         </div>
       </div>
@@ -25,9 +28,15 @@
       class="col-md-3 col-lg-2"
       *ngFor="let movie of moviesList | search : term"
     >
-      <app-card [movie]="movie" ></app-card>
+      <app-card
+        [movie]="movie"
+        *ngIf="movie.poster_path && movie.title"
+      ></app-card>
     </div>
-    <nav aria-label="Page navigation example d-flex justify-content-center" *ngIf="pagination">
+    <nav
+      aria-label="Page navigation example d-flex justify-content-center"
+      *ngIf="pagination"
+    >
       <ul class="pagination justify-content-center">
         <li
           class="page-item"

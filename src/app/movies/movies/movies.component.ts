@@ -25,16 +25,17 @@ pagination:boolean=true;
   getMovies(page: number) {
     this._MoviesDataService.getPopular(page).subscribe({
       next: (data: any) => {
-        this.moviesList = data.results;
+        this.moviesList = data.results
+          .filter((movie: Movieface) => movie.poster_path && movie.title);
       }
-
-    })
+    });
   }
+
   searchMovie() {
-   
+
     this._MoviesDataService.getSearchMovie(this.term).subscribe({
       next: (data: any) => {
-        
+
         if (this.term == '') {
           this.getMovies(1);
           this.pagination = true;
@@ -46,7 +47,7 @@ pagination:boolean=true;
     });
   }
   search() {
-  
+
 
     if (this.term) {
       this.pagination=false;
