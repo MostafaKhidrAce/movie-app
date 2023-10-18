@@ -13,9 +13,11 @@
     </h6>
     <div class="text-body-secondary d-flex justify-content-between card_body_data">
       {{ movie.release_date | date }}
-      <i *ngIf="!addedItem" class="fa-solid fa-heart "
-        [ngStyle]="movie.watchList ? {'color': 'red'} : {'color': 'blue'}" (click)="handleAddtoWatchList(movie.id)"></i>
-      <i *ngIf="addedItem" class="fa-solid  " (click)="handleRemove(movie.id)"></i>
+      <i *ngIf="!addedItem" class="fa-solid fa-heart heartIcon " [id]="movie.id"
+        (click)="handleAddtoWatchList(movie.id)"></i>
+      <i *ngIf="addedItem" class="fa-solid  fa-heart clickedHeartIcon " [id]="movie.id"
+        (click)="handleRemove(movie.id)"></i>
+
     </div>
     <div class="col-md-6">
       <div class="progress blue ">

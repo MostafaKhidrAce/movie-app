@@ -13,19 +13,20 @@ import { MoviesWishlistComponent } from './movies-wishlist/movies-wishlist.compo
 import { NgModule } from '@angular/core';
 
 
+
 @NgModule({
   declarations: [
     MoviesComponent,
     CardComponent,
     MoviesDetailsComponent,
-    MoviesWishlistComponent,SearchPipe
+    MoviesWishlistComponent, SearchPipe
   ],
   imports: [
     CommonModule,
-    MoviesRoutingModule,FormsModule,
-    
+    MoviesRoutingModule, FormsModule,
+
   ],
-  exports:[
+  exports: [
     MoviesComponent,
     CardComponent,
     MoviesDetailsComponent,

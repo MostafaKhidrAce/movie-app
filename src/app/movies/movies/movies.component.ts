@@ -1,3 +1,4 @@
+import { MoviesWishlistService } from 'src/app/services/movies-wishlist.service';
 import { Movieface } from './../../interface/movieface';
 import { MoviesDataService } from './../../services/movies-data.service';
 import { Component, Input } from '@angular/core';
@@ -13,27 +14,27 @@ pagination:boolean=true;
   term: string = "";
   pages: Array<number> = [];
   moviesList!: Array<Movieface>;
-  constructor(private _MoviesDataService: MoviesDataService) {
+  constructor(private _MoviesDataService: MoviesDataService, private _MoviesWishlist:MoviesWishlistService) {
     this.pages = new Array(10).fill("").map((ele, index) => index + 1)
 
   }
   ngOnInit(): void {
     this.getMovies(1);
+    this._MoviesWishlist.displayMoviesList()
   }
   getMovies(page: number) {
     this._MoviesDataService.getPopular(page).subscribe({
       next: (data: any) => {
-        console.log(data.results)
         this.moviesList = data.results;
       }
 
     })
   }
   searchMovie() {
-    console.log('hello');
+   
     this._MoviesDataService.getSearchMovie(this.term).subscribe({
       next: (data: any) => {
-        console.log(data.results);
+        
         if (this.term == '') {
           this.getMovies(1);
           this.pagination = true;
@@ -45,7 +46,7 @@ pagination:boolean=true;
     });
   }
   search() {
-    console.log('g');
+  
 
     if (this.term) {
       this.pagination=false;
