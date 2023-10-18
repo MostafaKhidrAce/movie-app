@@ -36,6 +36,8 @@ export class MoviesWishlistComponent {
       } else {
         objectSet.add(objString);
       }
+      this._MoviesWishlist.setCounter(moviesList.length)
+
     }
   }
 

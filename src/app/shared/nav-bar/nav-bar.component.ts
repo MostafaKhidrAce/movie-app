@@ -8,20 +8,30 @@ import { MoviesWishlistService } from 'src/app/services/movies-wishlist.service'
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
-  counter = 0
-  moviesList: any
+
+  counter: BehaviorSubject<number>;
 
   constructor(private _MoviesWishlist: MoviesWishlistService) {
-    this._MoviesWishlist.getCounter().subscribe((res) => {
-      this.counter = res
-    })
-
-
-    if (localStorage.getItem("moviesListCounter") != null) {
-      this.counter = Number(localStorage.getItem("moviesListCounter"))
-    }
+    this.counter = this._MoviesWishlist.counter;
+    this._MoviesWishlist.getCounter().subscribe(res => {
+      this.counter.next(res);
+    });
   }
 }
+// moviesList: any
+
+// counter: BehaviorSubject<number>;
+
+// constructor(private _MoviesWishlist: MoviesWishlistService) {
+//   this.counter = this._MoviesWishlist.counter;
+//   this._MoviesWishlist.getCounter().subscribe(res => {
+//     this.counter.next(res);
+//   })
+// if (localStorage.getItem("moviesListCounter") != null) {
+//   this.counter = Number(localStorage.getItem("moviesListCounter"))
+// }
+
+
 
 
 
