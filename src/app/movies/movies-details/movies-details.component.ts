@@ -15,8 +15,6 @@ export class MoviesDetailsComponent {
   addedItem = false
   counter = 0
 
-
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private moviesDataService: MoviesDataService,
@@ -25,7 +23,6 @@ export class MoviesDetailsComponent {
     this.moviesList = _MoviesWishlist.displayMoviesList();
     this._MoviesWishlist.getCounter().subscribe((res) => {
       this.counter = res
-
     })
   }
 
@@ -84,7 +81,6 @@ export class MoviesDetailsComponent {
       this.addedItem = true
       localStorage.setItem("flagIcon", JSON.stringify(this.addedItem))
       this._MoviesWishlist.setCounter(++this.counter)
-
     }
 
   }
@@ -93,7 +89,6 @@ export class MoviesDetailsComponent {
     this._MoviesWishlist.setCounter(--this.counter)
     this.addedItem = false
     localStorage.setItem("flagIcon", JSON.stringify(this.addedItem))
-
   }
 
 
