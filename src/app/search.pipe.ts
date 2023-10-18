@@ -6,8 +6,11 @@ import { Movieface } from './interface/movieface';
 })
 export class SearchPipe implements PipeTransform {
 
-  transform(data:Movieface[],term:string): Movieface[] {
-    return data.filter(ele=>ele.title.toLowerCase().includes(term.toLowerCase()));
-  }
+  transform(data: Movieface[] | undefined, term: string): Movieface[] {
+    if (!data) {
+      return [];
+    }
 
+    return data.filter(ele => ele.title.toLowerCase().includes(term.toLowerCase()));
+  }
 }

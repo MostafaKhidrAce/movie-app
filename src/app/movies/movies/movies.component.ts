@@ -53,7 +53,6 @@ pagination:boolean=true;
       this.pagination=false;
       this._MoviesDataService.getSearchMovie(this.term).subscribe({
         next: (data: any) => {
-          console.log(data.results);
           this.moviesList = data.results;
 
         },
