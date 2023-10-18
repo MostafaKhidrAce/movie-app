@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LanguageService } from 'src/app/services/lang-data.service';
+import { LanguageService, LANGUAGE_SERVICE } from 'src/app/services/lang-data.service';
 import { MoviesWishlistService } from 'src/app/services/movies-wishlist.service';
 
 @Component({
